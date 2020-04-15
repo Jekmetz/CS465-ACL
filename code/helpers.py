@@ -2,18 +2,6 @@ from .constants import *
 from os import path
 import os
 
-def accountExists(p):
-	#with f as the accounts file...
-	if(path.exists(ACCOUNTSFILE)):
-		with open(ACCOUNTSFILE, "r") as f:
-			#for every line in f...
-			for line in f:
-				#if we found a match...
-				if(line.strip().split(" ")[0] == p):
-					return True;
-	#if we did not find a match...
-	return False;
-
 def loginAccount(username,password):
 	#check list of users and all passwords
 	if(path.exists(ACCOUNTSFILE)):
@@ -47,5 +35,16 @@ def file_genocide():
 	for f in filelist:
 		os.remove(path.join(OUTPUTDIR,f));
 
-def executionEnd():
-	pass;
+def executionEnd(session):
+	#create FILESFILE
+	with open(FILESFILE,"w") as f:
+		for file in session.files.values():
+			#TODO: change to the correct output
+			f.write(file.toString() + "\n");
+
+	#create GROUPSFILE
+	with open(GROUPSFILE,"w") as f:
+		for group in session.groups.values():
+			f.write(group.name + ": " + " ".join(group.users) + "\n");
+
+	#TODO: GENERATE WHATEVER OTHER FILES ARE NEEDED

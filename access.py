@@ -14,12 +14,12 @@ def main():
 		manual_control();
 	else:
 		run_commands_file(sys.argv[1]);
-	executionEnd();
 
 def run_commands_file(file):
 	#run every line in file
 	with open(file,"r") as f:
 		for line in f:
+			print("\u001b[33;1m" + line.strip() + "\u001b[0m");
 			run_command(line.strip());
 
 def run_command(cmd):
@@ -38,7 +38,8 @@ def manual_control():
 	#allow for manual control of the program
 	cmd = "";
 	while(cmd != "end"):
-		cmd = input("> ");
+		cmd = input("\u001b[33;1m> ");
+		print("\u001b[0m",end="");
 		run_command(cmd);
 
 if __name__ == "__main__":

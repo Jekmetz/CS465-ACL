@@ -3,3 +3,4 @@ class Session:
 		self.cu = None;
 		self.files = {};
 		self.groups = {};
+		self.users = [];
