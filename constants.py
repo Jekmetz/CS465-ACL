@@ -1,2 +1,0 @@
-FILEDIR = "./files/";
-OUTPUTDIR = "./outputs/";

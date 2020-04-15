@@ -1,8 +1,14 @@
 import os
 import sys
 from os import path
-import constants as CONST
-from classes.file import File
+import code.constants as CONST
+from code.classes import *
+from code.commands import *
+
+#global variables
+cu="";		#current user
+files={};	#file dictionary
+groups={};	#group dictionary
 
 def main():
 	file_genocide();
@@ -10,7 +16,6 @@ def main():
 		manual_control();
 	else:
 		run_commands_file(sys.argv[1]);
-	end();
 
 def run_commands_file(file):
 	#run every line in file
@@ -19,17 +24,25 @@ def run_commands_file(file):
 			run_command(line.strip());
 
 def run_command(cmd):
-	pass;
-
-def end():
-	pass;
+	split = cmd.split(" ",1);
+	if split[0] in cmdList:
+		#use lambda ternary style to be the most efficient
+		cmdList[split[0]]( (lambda: "", lambda: split[1])[len(split) > 1]() );
+	else:
+		dualLog("Faulty command: {cmd}\n".format(cmd=split[0]));
 
 def manual_control():
 	#allow for manual control of the program
 	cmd = "";
 	while(cmd != "end"):
-		cmd = raw_input("> ");
+		cmd = input("> ");
 		run_command(cmd);
+
+def dualLog(str):
+	print(str,end="");
+	with open(CONST.LOGFILE,"a") as logfile:
+		logfile.write(str);
+
 
 def file_genocide():
 	#Go through FILEDIR and OUTPUTDIR and kill it... kill it all
