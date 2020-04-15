@@ -1,0 +1,2 @@
+FILEDIR = "./files/";
+OUTPUTDIR = "./outputs/";
