@@ -6,11 +6,8 @@ class File:
 		self.owner = _owner;
 		self.group = None;
 
-	def setPerm(self, _perm):
-		perm = _perm;
-
 	def toString(self):
-		out = self.name + ": ";
+		out = self.name + ": " + self.owner + " " + ("nil",self.group)[self.group!=None] + " ";
 		
 		#each of these ternaries say:
 		#("x", "-")[self.perm & POS == 0](); 

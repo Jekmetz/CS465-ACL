@@ -35,6 +35,25 @@ def file_genocide():
 	for f in filelist:
 		os.remove(path.join(OUTPUTDIR,f));
 
+def strToPerm(string):
+	out = 0;
+
+	(owner,group,everyone) = string.split(" ");
+
+	count = 0;
+	#for every group...
+	for g in (owner,group,everyone):
+		#for every character in that group...
+		for c in g:
+			#if we have something other than a dash...
+			if(c != '-'):
+				#yeet that permission in there.
+				out |= 1<<(8-count);
+			#increment the count each time
+			count += 1;
+
+	return out;
+
 def executionEnd(session):
 	#create FILESFILE
 	with open(FILESFILE,"w") as f:
