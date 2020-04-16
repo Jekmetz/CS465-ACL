@@ -195,13 +195,13 @@ def read(params, s):
 	canAccess = False;
 	#find access permissions
 	#owner
-	if(s.cu == f.owner and (f.perm & 1<<8)):
+	if(s.cu == f.owner):
 		#check read on owner
-		canAccess = True;
+		canAccess = (f.perm & 1<<8);
 	#group
-	elif(f.group != None and s.cu in s.groups[f.group].users and (f.perm&1<<5)):
+	elif(f.group != None and s.cu in s.groups[f.group].users):
 		#check read on group
-		canAccess = True;
+		canAccess = (f.perm&1<<5);
 	#everyone
 	else:
 		#check read on everyone
@@ -231,13 +231,13 @@ def write(params, s):
 	canAccess = False;
 	#find access permissions
 	#owner
-	if(s.cu == f.owner and (f.perm & 1<<7)):
+	if(s.cu == f.owner):
 		#check read on owner
-		canAccess = True;
+		canAccess = (f.perm & 1<<7);
 	#group
-	elif(f.group != None and s.cu in s.groups[f.group].users and (f.perm&1<<4)):
+	elif(f.group != None and s.cu in s.groups[f.group].users):
 		#check read on group
-		canAccess = True;
+		canAccess = (f.perm&1<<4);
 	#everyone
 	else:
 		#check read on everyone
@@ -266,13 +266,13 @@ def execute(params, s):
 	canAccess = False;
 	#find access permissions
 	#owner
-	if(s.cu == f.owner and (f.perm & 1<<6)):
+	if(s.cu == f.owner):
 		#check read on owner
-		canAccess = True;
+		canAccess = (f.perm & 1<<6);
 	#group
-	elif(f.group != None and s.cu in s.groups[f.group].users and (f.perm & 1<<3)):
+	elif(f.group != None and s.cu in s.groups[f.group].users):
 		#check read on group
-		canAccess = True;
+		canAccess = (f.perm&1<<3);
 	#everyone
 	else:
 		#check read on everyone

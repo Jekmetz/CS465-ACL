@@ -13,3 +13,5 @@ python3 access.py jtc1/jtc1INPUT.txt
 
 and the files and outputs directories will populate with the same files and outputs that were copied into jtc1.
 replace jtc1 with jtc2 to test the second case.
+
+Documents are stored in the documents folder. Plese look there for the pdf document explaining this project in detail!
