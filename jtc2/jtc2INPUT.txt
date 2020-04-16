@@ -1,0 +1,23 @@
+useradd root rootpwd
+login root rootpwd
+groupadd nothing
+useradd rampant_skiddie abc123
+mkfile script
+chgrp script nothing
+chmod script rwx --- ---
+logout
+login rampant_skiddie IForgetMyPassword
+login rampant_skiddie OhYeah...
+login rampant_skiddie abc123
+write script malicious software
+read script
+execute script
+chmod script rwx --- rwx
+mkfile darn.txt
+write darn.txt "ATTEMPTS THWARTED!"
+read darn.txt
+execute darn.txt
+chmod darn.txt rwx --- ---
+execute darn.txt
+logout
+end

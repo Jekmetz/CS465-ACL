@@ -1,0 +1,23 @@
+Account 'root' created!
+User 'root' logged in.
+Group 'nothing' added.
+Account 'rampant_skiddie' created!
+File 'script' sucessfully created with owner 'root' and default permissions!
+File 'script' group successfully changed to 'nothing' by 'root'!
+File 'script' permissions successfully changed to 'rwx --- ---' by 'root'.
+User 'root' logged out.
+Login authentication failed. Failure to log in user: rampant_skiddie
+Login authentication failed. Failure to log in user: rampant_skiddie
+User 'rampant_skiddie' logged in.
+User 'rampant_skiddie' denied write access to file 'script'.
+User 'rampant_skiddie' denied read access to file 'script'.
+User 'rampant_skiddie' denied execute access to file 'script'.
+User 'rampant_skiddie' does not have permission to change permissions for file 'script'.
+File 'darn.txt' sucessfully created with owner 'rampant_skiddie' and default permissions!
+User 'rampant_skiddie' wrote to 'darn.txt': '"ATTEMPTS THWARTED!"'
+User 'rampant_skiddie' reads file 'darn.txt' with text:
+"ATTEMPTS THWARTED!"
+User 'rampant_skiddie' denied execute access to file 'darn.txt'.
+File 'darn.txt' permissions successfully changed to 'rwx --- ---' by 'rampant_skiddie'.
+'darn.txt' executed successfully by 'rampant_skiddie'
+User 'rampant_skiddie' logged out.

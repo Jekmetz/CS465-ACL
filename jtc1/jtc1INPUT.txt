@@ -1,0 +1,46 @@
+useradd root r00t5t*ud
+login root r00t5t*ud
+groupadd fullf1
+groupadd fullf2
+useradd af1 af1pwd
+useradd bf1 bf1pwd
+useradd af2 af2pwd
+useradd bf2 bf2pwd
+useradd af1f2 af1f2pwd
+usergrp af1 fullf1
+usergrp bf1 fullf1
+usergrp af2 fullf2
+usergrp bf2 fullf2
+usergrp af2 fullf2
+usergrp af1f2 fullf1
+usergrp af1f2 fullf2
+mkfile f1.txt
+chgrp f1.txt fullf1
+mkfile f2.txt
+chgrp f2.txt fullf2
+chmod f1.txt --- rwx ---
+chmod f2.txt --- rwx ---
+chown f1.txt af1
+chown f2.txt af2
+logout
+login af1 af1pwd
+write f1.txt Text from af1 in f1.txt
+read f1.txt
+execute f1.txt
+read f2.txt
+logout
+login af2 af2pwd
+write f2.txt Text from af2 in f2.txt
+read f2.txt
+execute f2.txt
+read f1.txt
+logout
+login af1f2 af1f2pwd
+write f1.txt Text from af1f2 in f1.txt
+read f1.txt
+execute f1.txt
+write f2.txt Text from af1f2 in f2.txt
+read f2.txt
+execute f2.txt
+logout
+end

@@ -4,8 +4,6 @@ from .helpers import *
 import sys
 from .classes import *
 
-#global variables
-
 def useradd(params,s):
 	(username,password) = params.split(" ");
 
@@ -197,13 +195,13 @@ def read(params, s):
 	canAccess = False;
 	#find access permissions
 	#owner
-	if(s.cu == f.owner):
+	if(s.cu == f.owner and (f.perm & 1<<8)):
 		#check read on owner
-		canAccess = (f.perm & 1<<8);
+		canAccess = True;
 	#group
-	elif(f.group != None and s.cu in s.groups[f.group].users):
+	elif(f.group != None and s.cu in s.groups[f.group].users and (f.perm&1<<5)):
 		#check read on group
-		canAccess = (f.perm & 1<<5);
+		canAccess = True;
 	#everyone
 	else:
 		#check read on everyone
@@ -233,13 +231,13 @@ def write(params, s):
 	canAccess = False;
 	#find access permissions
 	#owner
-	if(s.cu == f.owner):
+	if(s.cu == f.owner and (f.perm & 1<<7)):
 		#check read on owner
-		canAccess = (f.perm & 1<<7);
+		canAccess = True;
 	#group
-	elif(f.group != None and s.cu in s.groups[f.group].users):
+	elif(f.group != None and s.cu in s.groups[f.group].users and (f.perm&1<<4)):
 		#check read on group
-		canAccess = (f.perm & 1<<4);
+		canAccess = True;
 	#everyone
 	else:
 		#check read on everyone
@@ -268,13 +266,13 @@ def execute(params, s):
 	canAccess = False;
 	#find access permissions
 	#owner
-	if(s.cu == f.owner):
+	if(s.cu == f.owner and (f.perm & 1<<6)):
 		#check read on owner
-		canAccess = (f.perm & 1<<6);
+		canAccess = True;
 	#group
-	elif(f.group != None and s.cu in s.groups[f.group].users):
+	elif(f.group != None and s.cu in s.groups[f.group].users and (f.perm & 1<<3)):
 		#check read on group
-		canAccess = (f.perm & 1<<3);
+		canAccess = True;
 	#everyone
 	else:
 		#check read on everyone

@@ -28,12 +28,18 @@ def dualLog(str):
 
 def file_genocide():
 	#Go through FILEDIR and OUTPUTDIR and kill it... kill it all
-	filelist = os.listdir(FILEDIR);
-	for f in filelist:
-		os.remove(path.join(FILEDIR,f));
-	filelist = os.listdir(OUTPUTDIR);
-	for f in filelist:
-		os.remove(path.join(OUTPUTDIR,f));
+	if(path.exists(FILEDIR)):
+		filelist = os.listdir(FILEDIR);
+		for f in filelist:
+			os.remove(path.join(FILEDIR,f));
+	else:
+		os.mkdir(FILEDIR);
+	if(path.exists(OUTPUTDIR)):
+		filelist = os.listdir(OUTPUTDIR);
+		for f in filelist:
+			os.remove(path.join(OUTPUTDIR,f));
+	else:
+		os.mkdir(OUTPUTDIR);
 
 def strToPerm(string):
 	out = 0;

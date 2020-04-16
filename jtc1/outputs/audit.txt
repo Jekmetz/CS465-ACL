@@ -1,0 +1,51 @@
+Account 'root' created!
+User 'root' logged in.
+Group 'fullf1' added.
+Group 'fullf2' added.
+Account 'af1' created!
+Account 'bf1' created!
+Account 'af2' created!
+Account 'bf2' created!
+Account 'af1f2' created!
+User 'af1' added to group 'fullf1'.
+User 'bf1' added to group 'fullf1'.
+User 'af2' added to group 'fullf2'.
+User 'bf2' added to group 'fullf2'.
+User 'af2' already in group 'fullf2'.
+User 'af1f2' added to group 'fullf1'.
+User 'af1f2' added to group 'fullf2'.
+File 'f1.txt' sucessfully created with owner 'root' and default permissions!
+File 'f1.txt' group successfully changed to 'fullf1' by 'root'!
+File 'f2.txt' sucessfully created with owner 'root' and default permissions!
+File 'f2.txt' group successfully changed to 'fullf2' by 'root'!
+File 'f1.txt' permissions successfully changed to '--- rwx ---' by 'root'.
+File 'f2.txt' permissions successfully changed to '--- rwx ---' by 'root'.
+File 'f1.txt' owner successfully changed to 'af1'
+File 'f2.txt' owner successfully changed to 'af2'
+User 'root' logged out.
+User 'af1' logged in.
+User 'af1' wrote to 'f1.txt': 'Text from af1 in f1.txt'
+User 'af1' reads file 'f1.txt' with text:
+Text from af1 in f1.txt
+'f1.txt' executed successfully by 'af1'
+User 'af1' denied read access to file 'f2.txt'.
+User 'af1' logged out.
+User 'af2' logged in.
+User 'af2' wrote to 'f2.txt': 'Text from af2 in f2.txt'
+User 'af2' reads file 'f2.txt' with text:
+Text from af2 in f2.txt
+'f2.txt' executed successfully by 'af2'
+User 'af2' denied read access to file 'f1.txt'.
+User 'af2' logged out.
+User 'af1f2' logged in.
+User 'af1f2' wrote to 'f1.txt': 'Text from af1f2 in f1.txt'
+User 'af1f2' reads file 'f1.txt' with text:
+Text from af1 in f1.txt
+Text from af1f2 in f1.txt
+'f1.txt' executed successfully by 'af1f2'
+User 'af1f2' wrote to 'f2.txt': 'Text from af1f2 in f2.txt'
+User 'af1f2' reads file 'f2.txt' with text:
+Text from af2 in f2.txt
+Text from af1f2 in f2.txt
+'f2.txt' executed successfully by 'af1f2'
+User 'af1f2' logged out.

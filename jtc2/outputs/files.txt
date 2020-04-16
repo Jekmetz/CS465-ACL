@@ -1,0 +1,2 @@
+script: root nothing rwx --- ---
+darn.txt: rampant_skiddie nil rwx --- ---

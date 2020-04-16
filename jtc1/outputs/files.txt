@@ -1,0 +1,2 @@
+f2.txt: af2 fullf2 --- rwx ---
+f1.txt: af1 fullf1 --- rwx ---

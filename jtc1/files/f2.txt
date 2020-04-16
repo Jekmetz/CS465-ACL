@@ -1,0 +1,2 @@
+Text from af2 in f2.txt
+Text from af1f2 in f2.txt
